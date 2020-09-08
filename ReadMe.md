@@ -2,9 +2,9 @@
 Current project includes shared library, unit tests based on "Catch" framework and main program for working with the input text file.
 Library supports 2 modes:
 
-First mode: finding of the occurrences for the needed word.
+1. Finding the occurrences of the necessary word.
 
-Second mode: calculation of the 32bit checksum based on algorithm: checksum = word1 + word2 + ... + wordN
+2. Calculation of the 32bit checksum based on algorithm: checksum = word1 + word2 + ... + wordN.
 
 ## Dependencies
 Framework for unit tests [Catch] (https://github.com/catchorg/Catch2)
@@ -37,7 +37,7 @@ Main program includes "TextFileProcessor.cpp" source file
 ## How to build
 To build the project you should use cmake 3.16+ and GCC 6+.
 
-You can build a separate shared library or you can build tests/main program which will
+You can build a separate shared library or you can build tests or main program which will
 use pre-built library.
 
 To build the library only please run "cmake ~pwd" from "FileProcessor/src" folder.
