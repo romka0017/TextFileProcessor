@@ -1,7 +1,9 @@
 # Text file processor
 Current project includes shared library, unit tests based on "Catch" framework and main program for working with the input text file.
 Library supports 2 modes:
+
 First mode: finding of the occurrences for the needed word.
+
 Second mode: calculation of the 32bit checksum based on algorithm: checksum = word1 + word2 + ... + wordN
 
 ## Dependencies
@@ -11,11 +13,15 @@ Framework for unit tests [Catch] (https://github.com/catchorg/Catch2)
 Library includes classes for input parameters processing, input file processing and data processing.
 
 **/include/dataprocessor.h**
+
 **/include/fileprocessor.h**
+
 **/include/inputparameters.h**
 
 **/src/dataprocessor.cpp**
+
 **/src/fileprocessor.cpp**
+
 **/src/inputparameters.cpp**
 
 Unit tests include "catch.hpp" header file and "catch_tests.cpp" source file
