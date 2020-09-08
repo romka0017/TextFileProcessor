@@ -36,12 +36,12 @@ TEST_CASE("Find not existing needed word", "[WordFinderProcessor::ProcessFileStr
 TEST_CASE("Calculate checksum from not empty file", "[CheckSumProcessor::ProcessFileStream]")
 {
     InputParams params;
-    params.m_NeededWord = "amd";
+    params.m_NeededWord = "intel";
     params.m_Mode = WORDS_MODE;
     params.m_FileName = "Test.txt";
 
     FileProcessor reader(params.m_FileName);
-    WordFinderProcessor proc(params);
+    CheckSumProcessor proc;
     proc.ProcessFileStream(reader.GetRefFileStream());
 
     REQUIRE(proc.GetResult() == 311301608);
@@ -51,12 +51,12 @@ TEST_CASE("Calculate checksum from not empty file", "[CheckSumProcessor::Process
 TEST_CASE("Calculate checksum from empty file", "[CheckSumProcessor::ProcessFileStream]")
 {
     InputParams params;
-    params.m_NeededWord = "amd";
+    params.m_NeededWord = "intel";
     params.m_Mode = WORDS_MODE;
     params.m_FileName = "Test2.txt";
 
     FileProcessor reader(params.m_FileName);
-    WordFinderProcessor proc(params);
+    CheckSumProcessor proc;
     proc.ProcessFileStream(reader.GetRefFileStream());
 
     REQUIRE(proc.GetResult() == 0);

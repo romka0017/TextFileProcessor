@@ -46,3 +46,5 @@ To build the main program + library please run "cmake ~pwd" from "FileProcessor/
 
 ## Tests
 To run the tests please run executable file "catch_tests".
+
+Note: For correct calculation of the checksum on Linux, please use correct end of lines.

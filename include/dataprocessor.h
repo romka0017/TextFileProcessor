@@ -17,7 +17,6 @@ public:
 protected:
 
     DataProcessor() {};
-    std::string ReadOneLine(std::ifstream& inFileStream);
 };
 
 
@@ -31,6 +30,8 @@ public:
     uint32_t GetResult() const override;
 
 private:
+
+    std::string ReadOneLine(std::ifstream& inFileStream);
 
     uint32_t m_numberOccurrences = 0;
     std::string m_neededWord;

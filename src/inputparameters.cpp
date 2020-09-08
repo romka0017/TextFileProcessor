@@ -61,7 +61,7 @@ int InputParams::ParseInputString(int argc, char* argv[])
 
         // Warnings
         if (m_Mode == CHECKSUM_MODE && !m_NeededWord.empty())
-            std::cout << "ERROR: option -v [needed_word] will be ignored in the 'checksum' mode" << std::endl;
+            std::cout << "WARNING: option -v [needed_word] will be ignored in the 'checksum' mode" << std::endl;
 
     }
     catch (std::string& e) {

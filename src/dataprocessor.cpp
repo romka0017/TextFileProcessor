@@ -1,6 +1,10 @@
 #include <dataprocessor.h>
 
-std::string DataProcessor::ReadOneLine(std::ifstream& inFileStream)
+// Word finder
+WordFinderProcessor::WordFinderProcessor(const InputParams& params)
+    : m_neededWord(params.m_NeededWord) {}
+
+std::string WordFinderProcessor::ReadOneLine(std::ifstream& inFileStream)
 {
     std::string outString;
 
@@ -14,11 +18,6 @@ std::string DataProcessor::ReadOneLine(std::ifstream& inFileStream)
     return outString;
 }
 
-
-// Word finder
-WordFinderProcessor::WordFinderProcessor(const InputParams& params)
-    : m_neededWord(params.m_NeededWord) {}
-
 void WordFinderProcessor::ProcessFileStream(std::ifstream& inFileStream)
 {
     std::string oneString;
@@ -29,7 +28,10 @@ void WordFinderProcessor::ProcessFileStream(std::ifstream& inFileStream)
         {
             if (pos + m_neededWord.size() < oneString.size())
                 if (isalpha(oneString[pos + m_neededWord.size()]))
+                {
+                    pos = pos + m_neededWord.size();
                     continue;
+                }
 
             m_numberOccurrences++;
             pos = pos + m_neededWord.size();
